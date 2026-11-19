@@ -1,3 +1,5 @@
+
+import { Card, CardContent, Typography, Button } from '@mui/material'
 import { useState, useEffect } from 'react'
 import API from '../services/api'
 import { Link } from 'react-router-dom'
@@ -33,11 +35,21 @@ function VideosPage() {
       <h2>Choose a Video</h2>
 
       {videos.map((video) => (
-        <div key={video}>
-          <Link to={`/preview/${video}`}>
-            <h3>{video}</h3>
-          </Link>
-        </div>
+        <Card key={video} sx={{ mb: 2 }}>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>
+              {video}
+            </Typography>
+
+            <Button
+              component={Link}
+              to={`/preview/${encodeURIComponent(video)}`}
+              variant="contained"
+            >
+              Preview Video
+            </Button>
+          </CardContent>
+        </Card>
       ))}
     </div>
   )

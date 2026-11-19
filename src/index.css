@@ -1,0 +1,15 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #243447;
+}
+
+#root {
+  min-height: 100vh;
+}
