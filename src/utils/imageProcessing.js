@@ -18,7 +18,7 @@ export function processImage(imageData, targetColor, threshold) {
       (data[index + 2] - b) ** 2
     )
 
-    const match = distance <= threshold ? 1 : 0
+    const match = distance < threshold ? 1 : 0
     binary[i] = match
 
     const color = match ? 255 : 0
@@ -78,8 +78,8 @@ export function processImage(imageData, targetColor, threshold) {
     }
 
     centroid = {
-      x: sumX / largestGroup.length,
-      y: sumY / largestGroup.length
+      x: Math.floor(sumX / largestGroup.length),
+      y: Math.floor(sumY / largestGroup.length)
     }
   }
 
