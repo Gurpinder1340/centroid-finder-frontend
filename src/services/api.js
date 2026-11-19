@@ -1,4 +1,8 @@
 const API = {
+    getThumbnail: (filename) => {
+      return `/thumbnail/${encodeURIComponent(filename)}`
+    },
+    
   getVideos: async () => {
     const response = await fetch('/api/videos')
 
